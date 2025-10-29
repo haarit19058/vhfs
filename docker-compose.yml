@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: ./server/
+      dockerfile: Dockerfile
+    container_name: cpp_server
+    ports:
+      - "3030:3030"
+    networks:
+      - cppnet
+
+  client:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    container_name: cpp_client
+    depends_on:
+      - server
+    networks:
+      - cppnet
+
+networks:
+  cppnet:
+    driver: bridge
+
