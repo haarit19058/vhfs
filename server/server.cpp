@@ -45,15 +45,7 @@ int main(int argc,char** argv){
     if (client == -1) { perror("accept"); return 0; }
     printf("Client connected: %s\n", inet_ntoa(cli.sin_addr));
     
-    // while (true) {
-    //
-    //
-    //
-    //
-    //     // handle_one(client, root);
-    //     // close(client);
-    //     printf("Client disconnected\n");
-    // }
+
 
     return 0;
 } 
